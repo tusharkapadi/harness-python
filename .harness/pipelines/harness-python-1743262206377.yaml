@@ -37,10 +37,18 @@ pipeline:
                       pip install  pytest
 
                       if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+              - step:
+                  type: BuildAndPushDockerRegistry
+                  name: BuildAndPushDockerRegistry_1
+                  identifier: BuildAndPushDockerRegistry_1
+                  spec:
+                    connectorRef: account.Tushar_docker_registry
+                    repo: tusharapadi1/harness-python
+                    tags: <+input>.executionInput()
           platform:
-            arch: Amd64
             os: Linux
+            arch: Amd64
           runtime:
-            spec: {}
             type: Cloud
+            spec: {}
         type: CI
