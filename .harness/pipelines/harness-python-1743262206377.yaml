@@ -44,7 +44,8 @@ pipeline:
                   spec:
                     connectorRef: account.Tushar_docker_registry
                     repo: tusharapadi1/harness-python
-                    tags: <+input>.executionInput()
+                    tags:
+                      - "1"
           platform:
             os: Linux
             arch: Amd64
