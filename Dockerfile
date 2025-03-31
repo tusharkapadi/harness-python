@@ -7,10 +7,10 @@ RUN pip install --upgrade pip setuptools wheel
 COPY wheeldir /opt/app/wheeldir
 COPY requirements.txt test-requirements.txt /opt/app/src/
 
-RUN pip install --no-index --find-links=/opt/app/wheeldir \
+RUN pip install --find-links=/opt/app/wheeldir \
     -r /opt/app/src/requirements.txt
 
-RUN pip install --no-index --find-links=/opt/app/wheeldir \
+RUN pip install --find-links=/opt/app/wheeldir \
     -r /opt/app/src/test-requirements.txt
 
 COPY . /opt/app/src/
